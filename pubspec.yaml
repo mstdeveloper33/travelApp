@@ -84,6 +84,7 @@ flutter:
     - lib/assets/sakaryaimage2.png
     - lib/assets/Preview.png
     - lib/assets/media/
+    - lib/assets/travel.png
    
 
   #   - images/a_dot_ham.jpeg
