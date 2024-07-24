@@ -28,10 +28,17 @@ class _DrawermenuState extends State<Drawermenu> {
       width: MediaQuery.of(context).size.width / 1.7,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-            bottomRight: Radius.circular(70), topRight: Radius.circular(70)),
+            bottomRight: Radius.circular(30), topRight: Radius.circular(30)),
       ),
       child: Container(
-        color: Colors.blueGrey.shade100,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              end: Alignment.topCenter,
+              tileMode: TileMode.clamp,
+              colors: [Colors.teal.shade300, Colors.blue.shade300]),
+        ),
+        // color: Colors.grey.shade400,
         child: ListView(
           children: [
             DrawerHeader(
@@ -52,10 +59,13 @@ class _DrawermenuState extends State<Drawermenu> {
               leading: Icon(
                 Icons.settings,
                 size: 25,
+                color: Theme.of(context).colorScheme.inverseSurface,
               ),
               title: Text(
                 "AYARLAR",
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Theme.of(context).colorScheme.inverseSurface),
               ),
               onTap: () {
                 Navigator.of(context).push(
@@ -69,10 +79,14 @@ class _DrawermenuState extends State<Drawermenu> {
               leading: Icon(
                 Icons.favorite,
                 size: 25,
+                color: Theme.of(context).colorScheme.inverseSurface,
               ),
               title: Text(
                 "FAVORİLER",
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Theme.of(context).colorScheme.inverseSurface,
+                ),
               ),
               onTap: () {
                 Navigator.of(context).push(
@@ -86,10 +100,14 @@ class _DrawermenuState extends State<Drawermenu> {
               leading: Icon(
                 Icons.favorite,
                 size: 25,
+                color: Theme.of(context).colorScheme.inverseSurface,
               ),
               title: Text(
                 "İLETİŞİM",
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Theme.of(context).colorScheme.inverseSurface,
+                ),
               ),
               onTap: () {
                 Navigator.of(context).push(
@@ -103,10 +121,14 @@ class _DrawermenuState extends State<Drawermenu> {
               leading: Icon(
                 Icons.favorite,
                 size: 25,
+                color: Theme.of(context).colorScheme.inverseSurface,
               ),
               title: Text(
                 "UYGULAMA HAKKINDA",
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Theme.of(context).colorScheme.inverseSurface,
+                ),
               ),
               onTap: () {
                 Navigator.of(context).push(
@@ -120,10 +142,14 @@ class _DrawermenuState extends State<Drawermenu> {
               leading: Icon(
                 Icons.favorite,
                 size: 25,
+                color: Theme.of(context).colorScheme.inverseSurface,
               ),
               title: Text(
                 "SAKARYA HAKKINDA",
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Theme.of(context).colorScheme.inverseSurface,
+                ),
               ),
               onTap: () {
                 Navigator.of(context).push(

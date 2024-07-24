@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
 
 import 'package:travelapp/pages/home_page.dart';
 
+import 'package:travelapp/theme/theme_provider.dart';
 
 void main() {
-  runApp(SeyahatUygulamasi());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: SeyahatUygulamasi(),
+    ),
+  );
 }
 
 class SeyahatUygulamasi extends StatelessWidget {
@@ -14,9 +20,7 @@ class SeyahatUygulamasi extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Seyahat Uygulaması',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: Provider.of<ThemeProvider>(context).themeData,
       home: HomePage(),
     );
   }

@@ -30,6 +30,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
       drawer: Drawermenu(),
       body: CustomScrollView(
         slivers: [
