@@ -70,6 +70,7 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: Card(
+                    color: Colors.transparent,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
