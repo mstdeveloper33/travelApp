@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:travelapp/pages/home_page.dart';
+import 'package:travelapp/provider/favorite_provider.dart';
 
 import 'package:travelapp/theme/theme_provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ThemeProvider(),
+        ),
+        ChangeNotifierProvider(create: (_) => FavoriteProvider()),
+      ],
       child: SeyahatUygulamasi(),
     ),
   );

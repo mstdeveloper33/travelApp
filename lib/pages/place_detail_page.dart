@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert'; // JSON işlemek için gerekli
+import 'package:provider/provider.dart';
 import 'package:travelapp/model/models.dart';
 import 'package:travelapp/pages/drawermenu.dart';
-
+import 'package:travelapp/provider/favorite_provider.dart';
+ 
 class PlaceDetailPage extends StatefulWidget {
   final Place place;
   final List<String> imageUrls;
@@ -17,13 +17,11 @@ class PlaceDetailPage extends StatefulWidget {
 class _PlaceDetailPageState extends State<PlaceDetailPage> {
   late PageController _pageController;
   int _currentPage = 0;
-  bool _isFavorited = false;
 
   @override
   void initState() {
     super.initState();
     _pageController = PageController();
-    _checkIfFavorited();
   }
 
   @override
@@ -32,35 +30,10 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
     super.dispose();
   }
 
-  Future<void> _checkIfFavorited() async {
-    final prefs = await SharedPreferences.getInstance();
-    final favorites = prefs.getStringList('favorites') ?? [];
-    setState(() {
-      _isFavorited = favorites.contains(jsonEncode(widget.place.toJson()));
-    });
-  }
-
-  Future<void> _toggleFavorite() async {
-    final prefs = await SharedPreferences.getInstance();
-    final favorites = prefs.getStringList('favorites') ?? [];
-
-    final placeJson = jsonEncode(widget.place.toJson());
-
-    if (_isFavorited) {
-      favorites.remove(placeJson);
-    } else {
-      favorites.add(placeJson);
-    }
-
-    await prefs.setStringList('favorites', favorites);
-
-    setState(() {
-      _isFavorited = !_isFavorited;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    final favoriteProvider = Provider.of<FavoriteProvider>(context);
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       drawer: Drawermenu(),
@@ -137,12 +110,20 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                           ),
                         ),
                         IconButton(
-                          onPressed: _toggleFavorite,
+                          onPressed: () {
+                            if (favoriteProvider.isFavorite(widget.place)) {
+                              favoriteProvider.removeFavorite(widget.place);
+                            } else {
+                              favoriteProvider.addFavorite(widget.place);
+                            }
+                          },
                           icon: Icon(
-                            _isFavorited ? Icons.favorite : Icons.favorite,
-                            color: _isFavorited
+                            favoriteProvider.isFavorite(widget.place)
+                                ? Icons.favorite
+                                : Icons.favorite_border,
+                            color: favoriteProvider.isFavorite(widget.place)
                                 ? Colors.red
-                                : Colors.grey.shade700,
+                                : Colors.grey,
                           ),
                         )
                       ],
