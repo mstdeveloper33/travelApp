@@ -11,46 +11,58 @@ class FavoritesPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Favorites'),
+        centerTitle: true,
+        title: Text('Favori Yerlerim'),
       ),
-      body: ListView.builder(
-        itemCount: favoriteProvider.favorites.length,
-        itemBuilder: (context, index) {
-          final place = favoriteProvider.favorites[index];
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              color: Theme.of(context).cardTheme.color,
-              child: ListTile(
-                title: Text(place.name),
-                leading: place.imageUrls.isNotEmpty
-                    ? Image.asset(place.imageUrls.first,
-                        width: 50, height: 50, fit: BoxFit.cover)
-                    : null,
-                trailing: IconButton(
-                  icon: Icon(Icons.delete),
-                  onPressed: () {
-                    favoriteProvider.removeFavorite(place);
-                  },
-                ),
-                onTap: () async {
-                  final isFavorite = await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PlaceDetailPage(
-                        place: place,
-                        imageUrls: place.imageUrls,
+      body: favoriteProvider.favorites.isEmpty
+          ? Center(
+              child: Text('Henüz favori yeriniz yok.'),
+            )
+          : ListView.builder(
+              itemCount: favoriteProvider.favorites.length,
+              itemBuilder: (context, index) {
+                final place = favoriteProvider.favorites[index];
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    color: Theme.of(context).cardTheme.color,
+                    child: ListTile(
+                      title: Text(place.name),
+                      leading: place.imageUrls.isNotEmpty
+                          ? ClipOval(
+                              child: Image.asset(place.imageUrls.first,
+                                  width: 50, height: 50, fit: BoxFit.cover),
+                            )
+                          : null,
+                      trailing: IconButton(
+                        icon: Icon(Icons.delete),
+                        onPressed: () {
+                          favoriteProvider.removeFavorite(place);
+                        },
                       ),
-                    ),
-                  );
+                      onTap: () async {
+                        final isFavorite = await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PlaceDetailPage(
+                              place: place,
+                              imageUrls: place.imageUrls,
+                            ),
+                          ),
+                        );
 
-                  // Favori sayfasına geri döndüğünüzde favori listesi güncellenecek
-                },
-              ),
+                        // Favori sayfasına geri döndüğünüzde favori listesi güncellenecek
+                        if (isFavorite != null && !isFavorite) {
+                          favoriteProvider.removeFavorite(place);
+                        }
+                      },
+                    ),
+                  ),
+                );
+              },
             ),
-          );
-        },
-      ),
     );
   }
 }

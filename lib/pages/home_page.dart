@@ -35,6 +35,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     FlexibleSpaceBar(
+                      expandedTitleScale: 1.5,
                       centerTitle: true,
                       title: Text(
                         'Sakaryayı Keşfet',
@@ -78,8 +79,8 @@ class HomePage extends StatelessWidget {
                       children: <Widget>[
                         ClipRRect(
                           borderRadius: const BorderRadius.vertical(
-                            top: Radius.circular(15.0),
-                          ),
+                              top: Radius.circular(15.0),
+                              bottom: Radius.circular(15)),
                           child: Image.asset(
                             category.imagePath,
                             fit: BoxFit.fill,

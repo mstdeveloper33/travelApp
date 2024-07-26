@@ -1,46 +1,48 @@
 import 'package:travelapp/model/models.dart';
 
-// Camiler kategorisi
 final camiler = Category(
   imagePath: "lib/assets/camiler/cami1.png",
   name: 'Camiler',
   places: [
     Place(
       name: 'Ağa Cami',
-      description:
-          'Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir. Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.Tahtalı Cami, Sakarya\'da bulunan tarihi bir camidir.',
+      description: 'Tarihi bir camidir. Sakarya\'da bulunur.',
       imageUrls: [
         'lib/assets/camiler/cami.png',
         'lib/assets/camiler/cami2.png',
         'lib/assets/camiler/cami3.png',
       ],
+      latitude: 40.712776, // Örnek koordinatlar
+      longitude: -74.005974,
     ),
     Place(
       name: 'Rahime Sultan Cami',
-      description: 'Orhan Cami, Osmanlı döneminden kalma tarihi bir camidir.',
+      description: 'Osmanlı döneminden kalma tarihi bir camidir.',
       imageUrls: [
         'lib/assets/camiler/cami1.png',
         'lib/assets/camiler/cami2.png',
         'lib/assets/camiler/cami.png',
       ],
+      latitude: 40.732776, // Örnek koordinatlar
+      longitude: -74.015974,
     ),
   ],
   iconPath: 'lib/assets/mosque.png',
 );
 
-// Tarihi Yerler kategorisi
 final tarihiYerler = Category(
   name: 'Tarihi Yerler',
   places: [
     Place(
       name: 'Sakarya Müzesi',
-      description:
-          'Sakarya\'nın tarihi ve kültürel mirasını sergileyen bir müzedir.',
+      description: 'Sakarya\'nın tarihi ve kültürel mirasını sergileyen bir müzedir.',
       imageUrls: [
         'lib/assets/muzeler/alifuat.png',
         'lib/assets/muzeler/deprem.png',
         'lib/assets/muzeler/sakaryamuzesi.png',
       ],
+      latitude: 40.715776, // Örnek koordinatlar
+      longitude: -74.003974,
     ),
     Place(
       name: 'Sakarya Köprüsü',
@@ -50,20 +52,20 @@ final tarihiYerler = Category(
         'lib/assets/tarihiyerler/harmantepe.png',
         'lib/assets/tarihiyerler/pasalar.png',
       ],
+      latitude: 40.725776, // Örnek koordinatlar
+      longitude: -74.013974,
     ),
   ],
   imagePath: 'lib/assets/tarihiyerler/pasalar.png',
   iconPath: 'lib/assets/museum.png',
 );
 
-// Lezzet Durakları kategorisi
 final lezzetDuraklari = Category(
   name: 'Lezzet Durakları',
   places: [
     Place(
       name: 'Sakarya Kebap Salonu',
-      description:
-          'Sakarya\'da lezzetli kebapların bulunduğu ünlü bir restoran.',
+      description: 'Sakarya\'da lezzetli kebapların bulunduğu ünlü bir restoran.',
       imageUrls: [
         "lib/assets/mekanlar/mekan.png",
         "lib/assets/mekanlar/mekan1.png",
@@ -71,6 +73,8 @@ final lezzetDuraklari = Category(
         "lib/assets/mekanlar/mekan3.png",
         "lib/assets/mekanlar/mekan4.png"
       ],
+      latitude: 40.735776, // Örnek koordinatlar
+      longitude: -74.023974,
     ),
     Place(
       name: 'Lezzet Durağı',
@@ -79,13 +83,14 @@ final lezzetDuraklari = Category(
         "lib/assets/mekanlar/mekan3.png",
         "lib/assets/mekanlar/mekan4.png"
       ],
+      latitude: 40.745776, // Örnek koordinatlar
+      longitude: -74.033974,
     ),
   ],
   imagePath: 'lib/assets/mekanlar/mekan.png',
   iconPath: 'lib/assets/food.png',
 );
 
-// Piknik Alanları kategorisi
 final piknikAlanlari = Category(
   name: 'Piknik Alanları',
   places: [
@@ -100,6 +105,8 @@ final piknikAlanlari = Category(
         "lib/assets/piknikler/sakaryatabiatpark.png",
         "lib/assets/piknikler/sapancagolu.png"
       ],
+      latitude: 40.755776, // Örnek koordinatlar
+      longitude: -74.043974,
     ),
     Place(
       name: 'Doğa Parkı',
@@ -109,13 +116,14 @@ final piknikAlanlari = Category(
         "lib/assets/piknikler/sakaryatabiatpark.png",
         "lib/assets/piknikler/sapancagolu.png"
       ],
+      latitude: 40.765776, // Örnek koordinatlar
+      longitude: -74.053974,
     ),
   ],
   imagePath: 'lib/assets/piknikler/sapancagolu.png',
   iconPath: 'lib/assets/picnic.png',
 );
 
-// Türbeler kategorisi
 final turbeler = Category(
   name: 'Türbeler',
   places: [
@@ -127,6 +135,8 @@ final turbeler = Category(
         "lib/assets/turbeler/sakarbaba.png",
         "lib/assets/turbeler/seyyidkaraman.png"
       ],
+      latitude: 40.775776, // Örnek koordinatlar
+      longitude: -74.063974,
     ),
     Place(
       name: 'Hoca Türbesi',
@@ -136,13 +146,14 @@ final turbeler = Category(
         "lib/assets/turbeler/sakarbaba.png",
         "lib/assets/turbeler/seyyidkaraman.png"
       ],
+      latitude: 40.785776, // Örnek koordinatlar
+      longitude: -74.073974,
     ),
   ],
   imagePath: 'lib/assets/turbeler/sakarbaba.png',
   iconPath: 'lib/assets/tomb.png',
 );
 
-// Parklar kategorisi
 final parklar = Category(
   name: 'Parklar',
   places: [
@@ -155,6 +166,8 @@ final parklar = Category(
         "lib/assets/parklar/serdivantepesi.png",
         "lib/assets/parklar/uzunkumpark.png"
       ],
+      latitude: 40.795776, // Örnek koordinatlar
+      longitude: -74.083974,
     ),
     Place(
       name: 'Göl Parkı',
@@ -164,25 +177,27 @@ final parklar = Category(
         "lib/assets/parklar/serdivantepesi.png",
         "lib/assets/parklar/uzunkumpark.png"
       ],
+      latitude: 40.805776, // Örnek koordinatlar
+      longitude: -74.093974,
     ),
   ],
   imagePath: 'lib/assets/parklar/uzunkumpark.png',
   iconPath: 'lib/assets/parc.png',
 );
 
-// Müzeler kategorisi
 final muzeler = Category(
   name: 'Müzeler',
   places: [
     Place(
       name: 'Sakarya Müzesi',
-      description:
-          'Sakarya\'nın tarihi ve kültürel mirasını sergileyen bir müze.',
+      description: 'Sakarya\'nın tarihi ve kültürel mirasını sergileyen bir müze.',
       imageUrls: [
         'lib/assets/muzeler/alifuat.png',
         'lib/assets/muzeler/deprem.png',
         'lib/assets/muzeler/sakaryamuzesi.png',
       ],
+      latitude: 40.815776, // Örnek koordinatlar
+      longitude: -74.103974,
     ),
     Place(
       name: 'Tarih Müzesi',
@@ -192,13 +207,14 @@ final muzeler = Category(
         'lib/assets/muzeler/deprem.png',
         'lib/assets/muzeler/sakaryamuzesi.png',
       ],
+      latitude: 40.825776, // Örnek koordinatlar
+      longitude: -74.113974,
     ),
   ],
   imagePath: 'lib/assets/muzeler/deprem.png',
   iconPath: 'lib/assets/museum.png',
 );
 
-// Tüm kategorileri bir listeye ekleyin
 final List<Category> categories = [
   camiler,
   tarihiYerler,
