@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:travelapp/pages/drawermenu.dart';
 
-class Iletisim extends StatelessWidget {
-  const Iletisim({super.key});
+class EtkinliklerPage extends StatefulWidget {
+  const EtkinliklerPage({super.key});
 
+  @override
+  State<EtkinliklerPage> createState() => _EtkinliklerPageState();
+}
+
+class _EtkinliklerPageState extends State<EtkinliklerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawermenu(),
       appBar: AppBar(
         title: Text(
-          'İLETİŞİM',
+          'ETKİNLİKLER',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w500,

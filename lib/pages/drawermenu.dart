@@ -64,7 +64,7 @@ class _DrawermenuState extends State<Drawermenu> {
                     Expanded(
                       flex: 2,
                       child: Image.asset(
-                        "lib/assets/travel.png",
+                        "lib/assets/sakarya.png",
                         height: 70,
                         width: 70,
                       ),
@@ -74,38 +74,37 @@ class _DrawermenuState extends State<Drawermenu> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 2,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                decoration: DottedDecoration(
-                    color: Colors.black,
-                    shape: Shape.box,
-                    borderRadius: BorderRadius.circular(20)),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.home,
-                    size: 25,
-                    color: Theme.of(context).colorScheme.inverseSurface,
-                  ),
-                  title: Text(
-                    "ANASAYFA",
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Theme.of(context).colorScheme.inverseSurface),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => HomePage(),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Container(
+            //     decoration: DottedDecoration(
+            //         color: Colors.black,
+            //         shape: Shape.box,
+            //         borderRadius: BorderRadius.circular(20)),
+            //     child: ListTile(
+            //       leading: Icon(
+            //         Icons.home,
+            //         size: 25,
+            //         color: Theme.of(context).colorScheme.inverseSurface,
+            //       ),
+            //       title: Text(
+            //         "ANASAYFA",
+            //         style: TextStyle(
+            //             fontSize: 16,
+            //             color: Theme.of(context).colorScheme.inverseSurface),
+            //       ),
+            //       onTap: () {
+            //         Navigator.of(context).push(
+            //           MaterialPageRoute(
+            //             builder: (context) => HomePage(),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -135,37 +134,36 @@ class _DrawermenuState extends State<Drawermenu> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                child: ListTile(
-                  leading: Icon(
-                    Icons.favorite,
-                    size: 25,
-                    color: Theme.of(context).colorScheme.inverseSurface,
-                  ),
-                  title: Text(
-                    "FAVORİLER",
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Theme.of(context).colorScheme.inverseSurface,
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => FavoritesPage(),
-                      ),
-                    );
-                  },
-                ),
-                decoration: DottedDecoration(
-                    color: Colors.black,
-                    shape: Shape.box,
-                    borderRadius: BorderRadius.circular(20)),
-              ),
-            ),
-
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Container(
+            //     child: ListTile(
+            //       leading: Icon(
+            //         Icons.favorite,
+            //         size: 25,
+            //         color: Theme.of(context).colorScheme.inverseSurface,
+            //       ),
+            //       title: Text(
+            //         "FAVORİLER",
+            //         style: TextStyle(
+            //           fontSize: 16,
+            //           color: Theme.of(context).colorScheme.inverseSurface,
+            //         ),
+            //       ),
+            //       onTap: () {
+            //         Navigator.of(context).push(
+            //           MaterialPageRoute(
+            //             builder: (context) => FavoritesPage(),
+            //           ),
+            //         );
+            //       },
+            //     ),
+            //     decoration: DottedDecoration(
+            //         color: Colors.black,
+            //         shape: Shape.box,
+            //         borderRadius: BorderRadius.circular(20)),
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -196,7 +194,6 @@ class _DrawermenuState extends State<Drawermenu> {
                     borderRadius: BorderRadius.circular(20)),
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -237,7 +234,7 @@ class _DrawermenuState extends State<Drawermenu> {
                     color: Theme.of(context).colorScheme.inverseSurface,
                   ),
                   title: Text(
-                    "SAKARYA HAKKINDA",
+                    "BAŞKANDAN MESAJ",
                     style: TextStyle(
                       fontSize: 16,
                       color: Theme.of(context).colorScheme.inverseSurface,
@@ -257,98 +254,84 @@ class _DrawermenuState extends State<Drawermenu> {
                     borderRadius: BorderRadius.circular(20)),
               ),
             ),
-
-            // Divider(
-            //   indent: 20,
-            //   endIndent: 20,
-            //   height: 1,
-            //   color: Colors.black,
-            //   thickness: 2,
-            // ),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 15,
+              height: MediaQuery.of(context).size.height / 6,
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Container(
-                decoration: DottedDecoration(
-                    color: Colors.black,
-                    shape: Shape.box,
-                    borderRadius: BorderRadius.circular(20)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                            _launchURL("https://www.sakarya.bel.tr/");
-                          },
-                          child: ClipOval(
-                            child: Image.asset(
-                              'lib/assets/sakarya.png', // Eklemek istediğiniz resmin yolu
-                              height: MediaQuery.of(context).size.height / 10,
-                              width: MediaQuery.of(context).size.width / 5,
-                              fit: BoxFit.scaleDown,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                            _launchURL(
-                                "https://x.com/Sakaryabld?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor");
-                          },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(7.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          _launchURL("https://www.sakarya.bel.tr/");
+                        },
+                        child: ClipOval(
                           child: Image.asset(
-                            'lib/assets/media/twitter.png', // Eklemek istediğiniz resmin yolu
+                            'lib/assets/sakarya.png', // Eklemek istediğiniz resmin yolu
                             height: MediaQuery.of(context).size.height / 10,
                             width: MediaQuery.of(context).size.width / 5,
+                            fit: BoxFit.scaleDown,
                           ),
                         ),
                       ),
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                            _launchURL("https://www.instagram.com/sakaryabld/");
-                          },
-                          child: Image.asset(
-                            'lib/assets/media/instagram.png', // Eklemek istediğiniz resmin yolu
-                            height: MediaQuery.of(context).size.height / 10,
-                            width: MediaQuery.of(context).size.width / 5,
-                          ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(7.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          _launchURL(
+                              "https://x.com/Sakaryabld?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor");
+                        },
+                        child: Image.asset(
+                          'lib/assets/media/twitter.png', // Eklemek istediğiniz resmin yolu
+                          height: MediaQuery.of(context).size.height / 10,
+                          width: MediaQuery.of(context).size.width / 5,
                         ),
                       ),
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                            _launchURL(
-                                "https://www.facebook.com/sakaryabld/about/?_rdr");
-                          },
-                          child: Image.asset(
-                            'lib/assets/media/facebook.png', // Eklemek istediğiniz resmin yolu
-                            height: MediaQuery.of(context).size.height / 10,
-                            width: MediaQuery.of(context).size.width / 5,
-                          ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(7.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          _launchURL("https://www.instagram.com/sakaryabld/");
+                        },
+                        child: Image.asset(
+                          'lib/assets/media/instagram.png', // Eklemek istediğiniz resmin yolu
+                          height: MediaQuery.of(context).size.height / 10,
+                          width: MediaQuery.of(context).size.width / 5,
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(7.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          _launchURL(
+                              "https://www.facebook.com/sakaryabld/about/?_rdr");
+                        },
+                        child: Image.asset(
+                          'lib/assets/media/facebook.png', // Eklemek istediğiniz resmin yolu
+                          height: MediaQuery.of(context).size.height / 10,
+                          width: MediaQuery.of(context).size.width / 5,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             )
           ],

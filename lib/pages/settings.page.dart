@@ -13,8 +13,11 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("AYARLAR"),
       ),
       body: Column(
@@ -33,17 +36,15 @@ class _SettingsPageState extends State<SettingsPage> {
                   "Karanlık Mod",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.inversePrimary,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
                 CupertinoSwitch(
                   activeColor: Colors.blueGrey,
-                  applyTheme: true,
-                  thumbColor: Colors.green,
-                  value: Provider.of<ThemeProvider>(context).isDarkTheme,
+                  thumbColor: Colors.white,
+                  value: themeProvider.isDarkTheme,
                   onChanged: (value) {
-                    Provider.of<ThemeProvider>(context, listen: false)
-                        .toggleTheme();
+                    themeProvider.toggleTheme();
                   },
                 )
               ],
