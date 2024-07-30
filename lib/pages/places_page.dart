@@ -12,38 +12,43 @@ class PlacesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawermenu(),
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         actions: [
           Padding(
-            padding: const EdgeInsets.all(6.0),
+            padding: const EdgeInsets.all(8.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
                 height: MediaQuery.of(context).size.height / 18,
-                width: MediaQuery.of(context).size.width / 5,
+                width: MediaQuery.of(context).size.width / 5.5,
                 "lib/assets/belediyeappbar.png",
                 fit: BoxFit.fill,
               ),
             ),
           ),
         ],
+        title: Text(
+          category.name,
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
         centerTitle: true,
-        title: Text(category.name),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HomePage(),
-              ),
-              (route) => false,
-            );
-          },
-          icon: Icon(
-            Icons.arrow_circle_left_outlined,
-            size: 35,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
+          ),
+        ),
+        toolbarHeight: MediaQuery.of(context).size.height / 15,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              end: Alignment.topCenter,
+              colors: [Colors.teal.shade300, Colors.blue.shade300],
+            ),
           ),
         ),
       ),

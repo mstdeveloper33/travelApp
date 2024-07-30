@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'package:travelapp/pages/home_page.dart';
 import 'package:travelapp/pages/iletisim.dart';
+import 'package:travelapp/pages/splash.dart';
 import 'package:travelapp/provider/favorite_provider.dart';
 import 'package:travelapp/theme/dark_theme.dart';
 import 'package:travelapp/theme/light_theme.dart';
@@ -31,7 +32,7 @@ class SeyahatUygulamasi extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Seyahat Uygulaması',
       theme: themeProvider.isDarkTheme ? darkTheme : lightTheme,
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }
