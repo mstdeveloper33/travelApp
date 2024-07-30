@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
           tabs: [
             GButton(
               icon: Icons.home,
-              text: "Anasayfa",
+              text: "Kategoriler",
               textColor:
                   themeProvider.isDarkTheme ? Colors.white : Colors.white,
               onPressed: () => _onItemTapped(0),

@@ -17,13 +17,13 @@ class PlacesPage extends StatelessWidget {
       appBar: AppBar(
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(6.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
-                height: MediaQuery.of(context).size.height / 20,
-                width: MediaQuery.of(context).size.width / 6,
-                "lib/assets/Preview.png",
+                height: MediaQuery.of(context).size.height / 18,
+                width: MediaQuery.of(context).size.width / 5,
+                "lib/assets/belediyeappbar.png",
                 fit: BoxFit.fill,
               ),
             ),
@@ -41,7 +41,10 @@ class PlacesPage extends StatelessWidget {
               (route) => false,
             );
           },
-          icon: Icon(Icons.arrow_circle_left_outlined),
+          icon: Icon(
+            Icons.arrow_circle_left_outlined,
+            size: 35,
+          ),
         ),
       ),
       body: ListView.builder(

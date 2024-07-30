@@ -111,62 +111,59 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Card(
-                      color: Theme.of(context).colorScheme.surface,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            flex: 3,
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                widget.place.name,
-                                style: TextStyle(
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          flex: 3,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              widget.place.name,
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: ElevatedButton(
+                            onPressed: _openGoogleMaps,
+                            child: Row(
+                              children: [
+                                Text("Yol Tarifi "),
+                                Expanded(
+                                  child: Icon(Icons.map_outlined),
                                 ),
-                              ),
+                              ],
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              foregroundColor: Colors.white,
+                              backgroundColor:
+                                  Colors.blueGrey.shade700, // Buton metni rengi
                             ),
                           ),
-                          Expanded(
-                            flex: 2,
-                            child: ElevatedButton(
-                              onPressed: _openGoogleMaps,
-                              child: Row(
-                                children: [
-                                  Text("Yol Tarifi "),
-                                  Expanded(
-                                    child: Icon(Icons.map_outlined),
-                                  ),
-                                ],
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                foregroundColor: Colors.white,
-                                backgroundColor: Colors
-                                    .blueGrey.shade700, // Buton metni rengi
-                              ),
-                            ),
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            if (favoriteProvider.isFavorite(widget.place)) {
+                              favoriteProvider.removeFavorite(widget.place);
+                            } else {
+                              favoriteProvider.addFavorite(widget.place);
+                            }
+                          },
+                          icon: Icon(
+                            favoriteProvider.isFavorite(widget.place)
+                                ? Icons.favorite
+                                : Icons.favorite_border,
+                            color: favoriteProvider.isFavorite(widget.place)
+                                ? Colors.red
+                                : Colors.grey,
                           ),
-                          IconButton(
-                            onPressed: () {
-                              if (favoriteProvider.isFavorite(widget.place)) {
-                                favoriteProvider.removeFavorite(widget.place);
-                              } else {
-                                favoriteProvider.addFavorite(widget.place);
-                              }
-                            },
-                            icon: Icon(
-                              favoriteProvider.isFavorite(widget.place)
-                                  ? Icons.favorite
-                                  : Icons.favorite_border,
-                              color: favoriteProvider.isFavorite(widget.place)
-                                  ? Colors.red
-                                  : Colors.grey,
-                            ),
-                          )
-                        ],
-                      ),
+                        )
+                      ],
                     ),
                     SizedBox(height: 16.0),
                     Text(widget.place.description),

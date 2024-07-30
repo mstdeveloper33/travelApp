@@ -94,7 +94,7 @@ class MainPage extends StatelessWidget {
                           child: Container(
                             padding: EdgeInsets.all(3.0),
                             color: Colors.black54.withOpacity(
-                                0.1), // Arka plan rengini belirleyin
+                                0.4), // Arka plan rengini belirleyin
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(

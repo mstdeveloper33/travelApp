@@ -76,35 +76,37 @@ class _DrawermenuState extends State<Drawermenu> {
             const SizedBox(
               height: 2,
             ),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Container(
-            //     decoration: DottedDecoration(
-            //         color: Colors.black,
-            //         shape: Shape.box,
-            //         borderRadius: BorderRadius.circular(20)),
-            //     child: ListTile(
-            //       leading: Icon(
-            //         Icons.home,
-            //         size: 25,
-            //         color: Theme.of(context).colorScheme.inverseSurface,
-            //       ),
-            //       title: Text(
-            //         "ANASAYFA",
-            //         style: TextStyle(
-            //             fontSize: 16,
-            //             color: Theme.of(context).colorScheme.inverseSurface),
-            //       ),
-            //       onTap: () {
-            //         Navigator.of(context).push(
-            //           MaterialPageRoute(
-            //             builder: (context) => HomePage(),
-            //           ),
-            //         );
-            //       },
-            //     ),
-            //   ),
-            // ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: DottedDecoration(
+                    color: Colors.black,
+                    shape: Shape.box,
+                    borderRadius: BorderRadius.circular(20)),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.home,
+                    size: 25,
+                    color: Theme.of(context).colorScheme.inverseSurface,
+                  ),
+                  title: Text(
+                    "KATEGORİLER",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Theme.of(context).colorScheme.inverseSurface),
+                  ),
+                  onTap: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                      (route) => false,
+                    );
+                  },
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
@@ -241,11 +243,8 @@ class _DrawermenuState extends State<Drawermenu> {
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => SakaryaHakkinda(),
-                      ),
-                    );
+                    Navigator.pop(context);
+                    _launchURL("https://www.sakarya.bel.tr/");
                   },
                 ),
                 decoration: DottedDecoration(
@@ -255,7 +254,7 @@ class _DrawermenuState extends State<Drawermenu> {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 6,
+              height: MediaQuery.of(context).size.height / 11,
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),

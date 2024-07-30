@@ -89,6 +89,14 @@ flutter:
     - lib/assets/media/
     - lib/assets/travel.png
     - lib/assets/yusuf_alemdar.png
+    - lib/assets/belediyeappbar.png
+    - lib/assets/iletisim/telephone.png
+    - lib/assets/iletisim/target.png
+    - lib/assets/iletisim/printer.png
+    - lib/assets/iletisim/adress.png
+    - lib/assets/iletisim/phone.png
+
+   
    
 
   #   - images/a_dot_ham.jpeg
