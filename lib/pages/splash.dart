@@ -1,6 +1,5 @@
 import 'dart:async';
 
-
 import 'package:flutter/material.dart';
 import 'package:travelapp/pages/home_page.dart';
 
@@ -31,10 +30,11 @@ class _SplashScreenState extends State<SplashScreen> {
         // color: Colors.white,
         child: Center(
             child: Container(
-          margin: EdgeInsets.all(150),
+       //   margin: EdgeInsets.all(150),
           child: Image.asset(
-            "lib/assets/sakarya.png",
-            fit: BoxFit.contain,
+            "lib/assets/sakaryasplash.png",
+         
+            fit: BoxFit.cover,
           ),
         )),
       ),

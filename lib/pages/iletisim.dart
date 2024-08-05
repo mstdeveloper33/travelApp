@@ -1,12 +1,9 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:travelapp/pages/drawermenu.dart';
 import 'package:travelapp/theme/dark_theme.dart';
 import 'package:travelapp/theme/theme_provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../theme/light_theme.dart';
 
@@ -52,234 +49,133 @@ class _IletisimState extends State<Iletisim> {
         padding: const EdgeInsets.all(20.0),
         child: ListView(
           children: [
-            Card(
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
+            buildContactCard(
+              context,
+              themeProvider,
+              'Santral',
+              'lib/assets/iletisim/phone.png',
+              [
+                buildContactTile(
+                  '44 44 054',
+                  Uri.parse('tel:+4444054'),
                 ),
-              ),
-              color: Colors.transparent,
-              child: Theme(
-                data: ThemeData(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
+                buildContactTile(
+                  '0264 289 30 00',
+                  Uri.parse('tel:+902642893000'),
                 ),
-                child: ExpansionTile(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
-                  ),
-                  backgroundColor: Colors.transparent,
-                  collapsedBackgroundColor: Colors.transparent,
-                  leading: CircleAvatar(
-                    child: Image(
-                      image: AssetImage("lib/assets/iletisim/phone.png"),
-                    ),
-                  ),
-                  title: Text(
-                    "Santral",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: themeProvider.isDarkTheme
-                          ? darkTheme.textTheme.bodyLarge?.color
-                          : lightTheme.textTheme.bodyLarge?.color,
-                    ),
-                  ),
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.grey,
-                        child: ListTile(
-                          title: Text(
-                            "44 44 054",
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          tileColor: Colors.transparent,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.grey,
-                        child: ListTile(
-                          title: Text(
-                            "0264 289 30 00",
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          tileColor: Colors.transparent,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              ],
             ),
-            SizedBox(
-              height: 20,
+            SizedBox(height: 20),
+            buildContactCard(
+              context,
+              themeProvider,
+              'Çözüm Masası',
+              'lib/assets/iletisim/target.png',
+              [
+                buildContactTile(
+                  '153',
+                  Uri.parse('tel:153'),
+                ),
+              ],
             ),
-            Card(
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
+            SizedBox(height: 20),
+            buildContactCard(
+              context,
+              themeProvider,
+              'Yazışma Adresi',
+              'lib/assets/iletisim/printer.png',
+              [
+                buildContactTile(
+                  'Kavaklar Caddesi No:7 54100 Adapazarı/SAKARYA',
+                  Uri.parse(
+                      'https://www.google.com/maps/search/?api=1&query=40.777998,30.403223'),
                 ),
-              ),
-              color: Colors.transparent,
-              child: Theme(
-                data: ThemeData(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                ),
-                child: ExpansionTile(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
-                  ),
-                  backgroundColor: Colors.transparent,
-                  collapsedBackgroundColor: Colors.transparent,
-                  leading: CircleAvatar(
-                    child: Image(
-                      image: AssetImage("lib/assets/iletisim/target.png"),
-                    ),
-                  ),
-                  title: Text(
-                    "Çözüm Masası",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: themeProvider.isDarkTheme
-                          ? darkTheme.textTheme.bodyLarge?.color
-                          : lightTheme.textTheme.bodyLarge?.color,
-                    ),
-                  ),
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.grey,
-                        child: ListTile(
-                          title: Text(
-                            "153",
-                            style: TextStyle(fontSize: 25),
-                          ),
-                          tileColor: Colors.transparent,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              ],
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
+            SizedBox(height: 20),
+            buildContactCard(
+              context,
+              themeProvider,
+              'KEP Adresi',
+              'lib/assets/iletisim/adress.png',
+              [
+                buildContactTile(
+                  'sbb@hs01.kep.tr',
+                  Uri.parse('mailto:sbb@hs01.kep.tr'),
                 ),
-              ),
-              color: Colors.transparent,
-              child: Theme(
-                data: ThemeData(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                ),
-                child: ExpansionTile(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
-                  ),
-                  //backgroundColor: Colors.transparent,
-                  //collapsedBackgroundColor: Colors.transparent,
-                  leading: CircleAvatar(
-                    child: Image(
-                      image: AssetImage("lib/assets/iletisim/printer.png"),
-                    ),
-                  ),
-                  title: Text(
-                    "Yazışma Adresi",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: themeProvider.isDarkTheme
-                          ? darkTheme.textTheme.bodyLarge?.color
-                          : lightTheme.textTheme.bodyLarge?.color,
-                    ),
-                  ),
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.grey,
-                        child: ListTile(
-                          title: Text(
-                              "Kavaklar Caddesi No:7 54100 Adapazarı/SAKARYA"),
-                          tileColor: Colors.transparent,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Card(
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(30),
-                ),
-              ),
-              color: Colors.transparent,
-              child: Theme(
-                data: ThemeData(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                ),
-                child: ExpansionTile(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(30),
-                    ),
-                  ),
-                  backgroundColor: Colors.transparent,
-                  collapsedBackgroundColor: Colors.transparent,
-                  leading: CircleAvatar(
-                    child: Image(
-                      image: AssetImage("lib/assets/iletisim/adress.png"),
-                    ),
-                  ),
-                  title: Text(
-                    "KEP Adresi",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: themeProvider.isDarkTheme
-                          ? darkTheme.textTheme.bodyLarge?.color
-                          : lightTheme.textTheme.bodyLarge?.color,
-                    ),
-                  ),
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Card(
-                        color: Colors.grey,
-                        child: ListTile(
-                          title: Text("sbb@hs01.kep.tr"),
-                          tileColor: Colors.transparent,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              ],
             ),
           ],
         ),
       ),
     );
+  }
+
+  Widget buildContactCard(BuildContext context, ThemeProvider themeProvider,
+      String title, String iconPath, List<Widget> children) {
+    return Card(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(30),
+        ),
+      ),
+      color: Colors.transparent,
+      child: Theme(
+        data: ThemeData(
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+        ),
+        child: ExpansionTile(
+          initiallyExpanded: true,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(30),
+            ),
+          ),
+          backgroundColor: Colors.transparent,
+          collapsedBackgroundColor: Colors.transparent,
+          leading: CircleAvatar(
+            child: Image(
+              image: AssetImage(iconPath),
+            ),
+          ),
+          title: Text(
+            title,
+            style: TextStyle(
+              fontSize: 25,
+              color: themeProvider.isDarkTheme
+                  ? darkTheme.textTheme.bodyLarge?.color
+                  : lightTheme.textTheme.bodyLarge?.color,
+            ),
+          ),
+          children: children,
+        ),
+      ),
+    );
+  }
+
+  Widget buildContactTile(String text, Uri? url) {
+    return Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Card(
+        color: Colors.grey,
+        child: ListTile(
+          title: Text(
+            text,
+            style: TextStyle(fontSize: 20),
+          ),
+          tileColor: Colors.transparent,
+          onTap: url != null ? () => _launchUrl(url) : null,
+        ),
+      ),
+    );
+  }
+
+  void _launchUrl(Uri url) async {
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

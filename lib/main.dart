@@ -32,7 +32,7 @@ class SeyahatUygulamasi extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Seyahat Uygulaması',
       theme: themeProvider.isDarkTheme ? darkTheme : lightTheme,
-      home: SplashScreen(),
+      home: Iletisim(),
     );
   }
 }
