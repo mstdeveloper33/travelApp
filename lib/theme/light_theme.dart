@@ -44,7 +44,7 @@ ThemeData lightTheme = ThemeData(
   textTheme: TextTheme(
     bodyLarge: TextStyle(color: Colors.black),
     bodyMedium: TextStyle(color: Colors.grey.shade800),
-    displayLarge: TextStyle(color: Colors.black),
+    displayLarge: TextStyle(color: Colors.white),
     displayMedium: TextStyle(color: Colors.grey.shade800),
   ),
   iconTheme: IconThemeData(color: Colors.grey.shade800),

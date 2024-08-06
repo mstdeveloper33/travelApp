@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:travelapp/pages/favorite.dart';
 import 'package:travelapp/pages/home_page.dart';
 import 'package:travelapp/pages/iletisim.dart';
-import 'package:travelapp/pages/sakarya_hakkinda.dart';
+
 import 'package:travelapp/pages/settings.page.dart';
 import 'package:travelapp/pages/uygulama_hakkinda.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -136,36 +136,6 @@ class _DrawermenuState extends State<Drawermenu> {
                 ),
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Container(
-            //     child: ListTile(
-            //       leading: Icon(
-            //         Icons.favorite,
-            //         size: 25,
-            //         color: Theme.of(context).colorScheme.inverseSurface,
-            //       ),
-            //       title: Text(
-            //         "FAVORİLER",
-            //         style: TextStyle(
-            //           fontSize: 16,
-            //           color: Theme.of(context).colorScheme.inverseSurface,
-            //         ),
-            //       ),
-            //       onTap: () {
-            //         Navigator.of(context).push(
-            //           MaterialPageRoute(
-            //             builder: (context) => FavoritesPage(),
-            //           ),
-            //         );
-            //       },
-            //     ),
-            //     decoration: DottedDecoration(
-            //         color: Colors.black,
-            //         shape: Shape.box,
-            //         borderRadius: BorderRadius.circular(20)),
-            //   ),
-            // ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(

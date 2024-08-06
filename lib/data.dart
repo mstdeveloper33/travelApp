@@ -12,8 +12,9 @@ final camiler = Category(
         'lib/assets/camiler/cami2.png',
         'lib/assets/camiler/cami3.png',
       ],
-      latitude: 40.712776, // Örnek koordinatlar
-      longitude: -74.005974,
+      latitude:
+          40.78096510362698, // Örnek koordinatlar 40.78096510362698, 30.400904476626817
+      longitude: 30.400904476626817,
     ),
     Place(
       name: 'Rahime Sultan Cami',
@@ -23,8 +24,9 @@ final camiler = Category(
         'lib/assets/camiler/cami2.png',
         'lib/assets/camiler/cami.png',
       ],
-      latitude: 40.732776, // Örnek koordinatlar
-      longitude: -74.015974,
+      latitude:
+          40.70058724814265, // Örnek koordinatlar   40.70058724814265, 30.309369420802778
+      longitude: 30.309369420802778,
     ),
   ],
   iconPath: 'lib/assets/mosque.png',
@@ -35,14 +37,16 @@ final tarihiYerler = Category(
   places: [
     Place(
       name: 'Sakarya Müzesi',
-      description: 'Sakarya\'nın tarihi ve kültürel mirasını sergileyen bir müzedir.',
+      description:
+          'Sakarya\'nın tarihi ve kültürel mirasını sergileyen bir müzedir.',
       imageUrls: [
         'lib/assets/muzeler/alifuat.png',
         'lib/assets/muzeler/deprem.png',
         'lib/assets/muzeler/sakaryamuzesi.png',
       ],
-      latitude: 40.715776, // Örnek koordinatlar
-      longitude: -74.003974,
+      latitude:
+          40.77401959457238, // Örnek koordinatlar      40.77401959457238, 30.400672022659112
+      longitude: 30.400672022659112,
     ),
     Place(
       name: 'Sakarya Köprüsü',
@@ -52,8 +56,9 @@ final tarihiYerler = Category(
         'lib/assets/tarihiyerler/harmantepe.png',
         'lib/assets/tarihiyerler/pasalar.png',
       ],
-      latitude: 40.725776, // Örnek koordinatlar
-      longitude: -74.013974,
+      latitude:
+          40.777912904986756, // Örnek koordinatlar     40.777912904986756, 30.4002893396061
+      longitude: 30.4002893396061,
     ),
   ],
   imagePath: 'lib/assets/tarihiyerler/pasalar.png',
@@ -65,7 +70,8 @@ final lezzetDuraklari = Category(
   places: [
     Place(
       name: 'Sakarya Kebap Salonu',
-      description: 'Sakarya\'da lezzetli kebapların bulunduğu ünlü bir restoran.',
+      description:
+          'Sakarya\'da lezzetli kebapların bulunduğu ünlü bir restoran.',
       imageUrls: [
         "lib/assets/mekanlar/mekan.png",
         "lib/assets/mekanlar/mekan1.png",
@@ -105,8 +111,9 @@ final piknikAlanlari = Category(
         "lib/assets/piknikler/sakaryatabiatpark.png",
         "lib/assets/piknikler/sapancagolu.png"
       ],
-      latitude: 40.755776, // Örnek koordinatlar
-      longitude: -74.043974,
+      latitude:
+          40.7402219513027, // Örnek koordinatlar     40.7402219513027, 30.41821693800163
+      longitude: 30.41821693800163,
     ),
     Place(
       name: 'Doğa Parkı',
@@ -177,8 +184,9 @@ final parklar = Category(
         "lib/assets/parklar/serdivantepesi.png",
         "lib/assets/parklar/uzunkumpark.png"
       ],
-      latitude: 40.805776, // Örnek koordinatlar
-      longitude: -74.093974,
+      latitude:
+          40.73598297684977, // Örnek koordinatlar  40.73598297684977, 30.319047095807317
+      longitude: 30.319047095807317,
     ),
   ],
   imagePath: 'lib/assets/parklar/uzunkumpark.png',
@@ -190,7 +198,8 @@ final muzeler = Category(
   places: [
     Place(
       name: 'Sakarya Müzesi',
-      description: 'Sakarya\'nın tarihi ve kültürel mirasını sergileyen bir müze.',
+      description:
+          'Sakarya\'nın tarihi ve kültürel mirasını sergileyen bir müze.',
       imageUrls: [
         'lib/assets/muzeler/alifuat.png',
         'lib/assets/muzeler/deprem.png',

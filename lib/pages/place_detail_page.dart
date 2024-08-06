@@ -4,6 +4,8 @@ import 'package:travelapp/model/models.dart';
 import 'package:travelapp/pages/drawermenu.dart';
 import 'package:travelapp/provider/favorite_provider.dart';
 import 'package:url_launcher/url_launcher.dart'; // URL açmak için
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 class PlaceDetailPage extends StatefulWidget {
   final Place place;
@@ -42,6 +44,37 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
     }
   }
 
+  // Resmi tam ekran galeride gösteren bir yöntem
+  void _showImageGallery(BuildContext context, int initialIndex) {
+    showDialog(
+      useRootNavigator: true,
+      barrierColor: Colors.black,
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: Colors.black,
+          insetPadding: EdgeInsets.all(0),
+          child: PhotoViewGallery.builder(
+            itemCount: widget.place.imageUrls.length,
+            builder: (context, index) {
+              return PhotoViewGalleryPageOptions(
+                  basePosition: Alignment.center,
+                  imageProvider: AssetImage(widget.place.imageUrls[index]),
+                  minScale: PhotoViewComputedScale.contained,
+                  maxScale: PhotoViewComputedScale.covered * 2);
+            },
+            scrollPhysics: BouncingScrollPhysics(
+                decelerationRate: ScrollDecelerationRate.fast),
+            backgroundDecoration: BoxDecoration(
+              color: Colors.black,
+            ),
+            pageController: PageController(initialPage: initialIndex),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final favoriteProvider = Provider.of<FavoriteProvider>(context);
@@ -62,22 +95,27 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
               background: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
-                  PageView.builder(
-                    controller: _pageController,
-                    itemCount: widget.place.imageUrls.length,
-                    onPageChanged: (index) {
-                      setState(() {
-                        _currentPage = index;
-                      });
+                  GestureDetector(
+                    onTap: () {
+                      _showImageGallery(context, _currentPage);
                     },
-                    itemBuilder: (context, index) {
-                      final imageUrl = widget.place.imageUrls[index];
-                      return Image.asset(
-                        imageUrl,
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                      );
-                    },
+                    child: PageView.builder(
+                      controller: _pageController,
+                      itemCount: widget.place.imageUrls.length,
+                      onPageChanged: (index) {
+                        setState(() {
+                          _currentPage = index;
+                        });
+                      },
+                      itemBuilder: (context, index) {
+                        final imageUrl = widget.place.imageUrls[index];
+                        return Image.asset(
+                          imageUrl,
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                        );
+                      },
+                    ),
                   ),
                   Positioned(
                     bottom: 4.0,
