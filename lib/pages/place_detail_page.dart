@@ -85,13 +85,9 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 200.0,
+            expandedHeight: 240.0,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
-              title: Text(
-                widget.place.name,
-                style: TextStyle(color: Colors.white, fontSize: 17),
-              ),
               background: Stack(
                 alignment: Alignment.bottomCenter,
                 children: [
@@ -149,22 +145,19 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          flex: 3,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text(
-                              widget.place.name,
-                              style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        widget.place.name,
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
                         ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
                         Expanded(
                           flex: 2,
                           child: ElevatedButton(
@@ -184,27 +177,36 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                             ),
                           ),
                         ),
-                        IconButton(
-                          onPressed: () {
-                            if (favoriteProvider.isFavorite(widget.place)) {
-                              favoriteProvider.removeFavorite(widget.place);
-                            } else {
-                              favoriteProvider.addFavorite(widget.place);
-                            }
-                          },
-                          icon: Icon(
-                            favoriteProvider.isFavorite(widget.place)
-                                ? Icons.favorite
-                                : Icons.favorite_border,
-                            color: favoriteProvider.isFavorite(widget.place)
-                                ? Colors.red
-                                : Colors.grey,
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 3,
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: IconButton(
+                            onPressed: () {
+                              if (favoriteProvider.isFavorite(widget.place)) {
+                                favoriteProvider.removeFavorite(widget.place);
+                              } else {
+                                favoriteProvider.addFavorite(widget.place);
+                              }
+                            },
+                            icon: Icon(
+                              favoriteProvider.isFavorite(widget.place)
+                                  ? Icons.favorite
+                                  : Icons.favorite_border,
+                              color: favoriteProvider.isFavorite(widget.place)
+                                  ? Colors.red
+                                  : Colors.grey,
+                            ),
                           ),
                         )
                       ],
                     ),
                     SizedBox(height: 16.0),
-                    Text(widget.place.description),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 7),
+                      child: Text(widget.place.description),
+                    ),
                     SizedBox(height: 16.0),
                   ],
                 ),

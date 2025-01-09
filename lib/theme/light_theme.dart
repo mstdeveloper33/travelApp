@@ -4,7 +4,7 @@ ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   primaryColor: Colors.grey.shade400,
   scaffoldBackgroundColor: Colors.white,
-  cardTheme: CardTheme(color: Colors.grey.shade400),
+  cardTheme: CardTheme(color: Colors.grey.shade200),
   appBarTheme: AppBarTheme(
     backgroundColor: Colors.grey.shade400,
     iconTheme: IconThemeData(color: Colors.black),
@@ -19,7 +19,7 @@ ThemeData lightTheme = ThemeData(
   ),
   colorScheme: ColorScheme.light(
     primary: Colors.grey.shade400,
-    surface: Colors.grey.shade300,
+    surface: Colors.white,
     onPrimary: Colors.black,
     onSurface: Colors.black87,
   ),

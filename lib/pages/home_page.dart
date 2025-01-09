@@ -15,11 +15,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  static const List<Widget> _pages = <Widget>[
-    MainPage(), // Bu sayfa henüz tanımlanmadı, istediğiniz sayfayı ekleyin
+  static final List<Widget> _pages = <Widget>[
+    MainPage(),
     FavoritesPage(),
     SearchPage(),
-    EtkinliklerPage(),
+    EtkinliklerPage(), // No need for parameters now
   ];
 
   void _onItemTapped(int index) {

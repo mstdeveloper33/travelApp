@@ -84,7 +84,7 @@ class MainPage extends StatelessWidget {
                             category.imagePath,
                             fit: BoxFit.fill,
                             width: double.infinity,
-                            height: 150.0 + (index % 3) * 50.0,
+                            height: 150.0 + (index % 2.1) * 45.0,
                           ),
                         ),
                         Positioned(

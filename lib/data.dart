@@ -1,6 +1,38 @@
+import 'package:travelapp/model/event_model.dart';
 import 'package:travelapp/model/models.dart';
 
 final camiler = Category(
+  imagePath: "lib/assets/camiler/cami1.png",
+  name: 'Camiler',
+  places: [
+    Place(
+      name: 'Ağa Cami',
+      description: 'Tarihi bir camidir. Sakarya\'da bulunur.',
+      imageUrls: [
+        'lib/assets/camiler/cami.png',
+        'lib/assets/camiler/cami2.png',
+        'lib/assets/camiler/cami3.png',
+      ],
+      latitude:
+          40.78096510362698, // Örnek koordinatlar 40.78096510362698, 30.400904476626817
+      longitude: 30.400904476626817,
+    ),
+    Place(
+      name: 'Rahime Sultan Cami',
+      description: 'Osmanlı döneminden kalma tarihi bir camidir.',
+      imageUrls: [
+        'lib/assets/camiler/cami1.png',
+        'lib/assets/camiler/cami2.png',
+        'lib/assets/camiler/cami.png',
+      ],
+      latitude:
+          40.70058724814265, // Örnek koordinatlar   40.70058724814265, 30.309369420802778
+      longitude: 30.309369420802778,
+    ),
+  ],
+  iconPath: 'lib/assets/mosque.png',
+);
+final camilerr = Category(
   imagePath: "lib/assets/camiler/cami1.png",
   name: 'Camiler',
   places: [
@@ -226,6 +258,7 @@ final muzeler = Category(
 
 final List<Category> categories = [
   camiler,
+  camilerr,
   tarihiYerler,
   lezzetDuraklari,
   piknikAlanlari,
@@ -233,3 +266,66 @@ final List<Category> categories = [
   parklar,
   muzeler,
 ];
+// Etkinlikler için tek liste
+final List<Event> events = [
+  Event(
+    tur: "Müzik",
+    name: 'Müzik Festivali',
+    description: 'Bu yılın en büyük müzik festivali!',
+    imageUrls: ['lib/assets/events/konser.png'],
+    eventDate: DateTime(2024, 9, 15, 18, 20),
+    detailimage: ['lib/assets/events/konser.png'],
+  ),
+  Event(
+    name: 'Sanat Sergisi',
+    description: 'Yerel sanatçıların eserlerinin sergilendiği etkinlik.',
+    imageUrls: ['lib/assets/events/sanat.gif'],
+    eventDate: DateTime(2024, 10, 5, 20, 30),
+    detailimage: ['lib/assets/events/cizgi.png'],
+    tur: 'Sanat',
+  ),
+  Event(
+    name: 'Maraton Koşusu',
+    description: 'Şehir genelinde düzenlenen maraton etkinliği.',
+    imageUrls: ['lib/assets/events/maraton.png'],
+    eventDate: DateTime(2024, 11, 1, 9, 45),
+    detailimage: ['lib/assets/events/maraton.png'],
+    tur: 'Spor',
+  ),
+  Event(
+    name: 'Futbol Maçı',
+    description: 'Ligdeki büyük futbol maçı.',
+    imageUrls: ['lib/assets/events/futbol.png'],
+    eventDate: DateTime(2024, 12, 20, 16, 30),
+    detailimage: ['lib/assets/events/futbol.png'],
+    tur: 'Spor',
+  ),
+  Event(
+    name: 'Ağaçlandırma Kampanyası',
+    description: 'Doğayı korumaya yönelik bir etkinlik.',
+    imageUrls: ['lib/assets/events/agaclandirma.gif'],
+    eventDate: DateTime(2024, 12, 20, 15, 30),
+    detailimage: ['lib/assets/events/agaclandirma.gif'],
+    tur: 'Doğa',
+  ),
+  Event(
+    name: 'Huzurevi Ziyareti',
+    description: 'Huzurevindeki yaşlıları ziyaret edeceğimiz etkinlik.',
+    imageUrls: ['lib/assets/events/huzurevi.png'],
+    eventDate: DateTime(2024, 12, 20, 11, 45),
+    detailimage: ['lib/assets/events/huzurevi.png'],
+    tur: 'Sosyal',
+  ),
+  Event(
+    name: 'Çizgi Çalışması',
+    description: 'Sanat ve çizgi üzerine bir çalışma.',
+    imageUrls: ['lib/assets/events/cizgi.png'],
+    eventDate: DateTime(2024, 12, 20, 14, 30),
+    detailimage: ['lib/assets/events/cizgi.png'],
+    tur: 'Resim',
+  ),
+];
+
+List<Event> getEvents() {
+  return events;
+}

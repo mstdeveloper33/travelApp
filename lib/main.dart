@@ -1,10 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:travelapp/InternetControl/internet_control.dart';
 import 'package:travelapp/firebase_options.dart';
-
-import 'package:travelapp/pages/home_page.dart';
-import 'package:travelapp/pages/iletisim.dart';
 import 'package:travelapp/pages/splash.dart';
 import 'package:travelapp/provider/favorite_provider.dart';
 import 'package:travelapp/servis/firebaseapi.dart';
